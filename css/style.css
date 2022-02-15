@@ -1,0 +1,127 @@
+body{
+    background-color: antiquewhite;
+    margin: 0;
+    color: black;
+    font-family: 'Supermercado One', cursive;
+}
+
+.header::after{                                         /*  ::after hace que el contenido despues de ese elemento */
+    content: "";                                        /*  añadir un contenedor vaacio para que funcione la superpocision */
+    height: 80vh;                                      /*  del contenedor vacio cubre el alto del dispositivo */
+    width:  100%;                                        /*  del contenedor vacio cubre el ancho del dispositivo*/
+    background-image: url(../img/via_lactea.jpg);       /*  añadir la imagen desde la url, la carpeta donde esta ../ para retroceder en las carpetas */
+    background-size: cover;                             /*  para poner la imagen en el maximo tamaño del dispositivo */
+    background-repeat: no-repeat;                       /*  para que la imagen este en el 100% y no se repita */
+    background-position: center;                        /*  para centrar la imagen*/
+    display: block;                                     /*  para que la imagen se vea en el bloque */
+    filter: blur(10px);                                 /*  para distorcionar la imagen */
+    -webkit-filter: blur(10px);                         /*  para que no existan problemas con los navegadores */
+    transition: all 2000ms;                             /*  agrega una transision con el tiempo en milisegundos */
+    padding: 35px, 25px;
+    margin-top: 15px; 
+    margin-bottom: 15px;
+}
+
+.header:hover::after{               /*  alterar el fondo */
+    filter: blur(0px);              /*  quita el filtro con el hover, el cursor quita el efecto*/
+    -webkit-filter: blur(0px);      /*  quita el filtro con el hover, el cursor quita el efecto */
+}
+
+.header:hover.header-content{       /* hover para que el cursor haga el efecto de filter */
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+
+.header-content{
+    position:       absolute;       /*  para que el contenido  no este en bloque sino uno encima del otro */
+    z-index:        1;              /*  para que este adelante */
+    top:            10%;            /*  para poner un margen */
+    left:           50%;            /*  izquierda  */
+    margin-top:     105px;          /*  centrado */
+    margin-left:    -145px;         /*  centrado */
+    width:          300px;          /*  definir el tamaño de la imagen */
+    height:         350px;          /*  definir el tamaño de la imagen */
+    text-align:     center;         /*  centrar el texto del contenido */
+    transition:     all 1500ms;     /*  para afectar con la misma trasicion */
+    color: whitesmoke;
+}
+
+.logo{
+    height: 150px;           /* altera el tamaño del logo */
+    width:  150px;           /* altera el tamaño del logo */
+}
+
+.header-content.title{                     /* cambiar el tamaño y fuente del titulo */
+                                           /* font-family: 'Oswald', sans-serif; */
+    font-family: 'Mochiy Pop P One', sans-serif;
+    font-size: 4.5rem;                     /* 1rem = 16px */
+    color: whitesmoke;
+}
+
+.header-content p{                      /* organizar y posicionar el texto  */
+    line-height: 1.7;
+    margin-top: 1rem;
+    color: whitesmoke;
+}
+
+.container{
+    max-width: 960px;
+    margin: auto;
+    overflow: hidden;
+    padding: 2rem 2rem;
+}
+
+.text-center{
+    text-align: center;
+    margin: auto;
+}
+
+.redes{
+    height: 100px;
+    width:  100px;
+}
+
+.grid-3{                /* dividir el contenedor en tres */
+    display: grid;      /* clase para dividir */
+    grid-template-columns: 1fr 1fr 1fr;     /* funcion para dividir en 3 */
+    grid-gap: 40px;     /* espaciado entre columna */
+}
+
+.grid-2{                /* dividir el contenedor en dos */
+    display: grid;      /* mismo proceso*/
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+}
+
+.left{
+    background-color: rgb(39, 37, 37);
+    color: whitesmoke;
+    margin: 1rem;
+}
+
+.imagen{
+    height: 80px;
+    width:  100px;
+}
+
+.right{
+    background-color: whitesmoke;
+    color: rgb(145, 145, 145);
+    margin: 1rem;
+}
+
+.footer p{
+    margin: 1rem;
+    text-align: center;
+}
+
+.navigation{
+    color: grey;
+    text-align: right;
+    margin-right: 3rem;
+    padding-right: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-grap:10px;
+}
+
